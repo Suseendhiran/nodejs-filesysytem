@@ -13,8 +13,8 @@ app.get("/write-date", (req, res) => {
   let date = new Date(); //create date
   let folderName = `${date.getDate()}-${date.getHours()}.${date.getMinutes()}.${date.getSeconds()}.${date.getMilliseconds()}`;
   console.log("time", folderName);
-  fs.writeFile(`./TimeFolder/${folderName}.txt`, date.toISOString(), (err) => {
-    if (!err) res.send(`Timestamp added, ${date.toISOString()}`);
+  fs.writeFile(`./TimeFolder/${folderName}.txt`, date.toString(), (err) => {
+    if (!err) res.send(`Timestamp added, ${date.toString()}`);
   });
 });
 
