@@ -1,7 +1,10 @@
 import express from "express";
+import dotenv from "dotenv";
 import fs from "fs";
+
+dotenv.config();
 const app = express();
-app.listen(3000);
+app.listen(process.env.PORT);
 
 app.get("/", (req, res) => {
   res.send("Hi 3000");
